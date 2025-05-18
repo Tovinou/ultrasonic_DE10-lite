@@ -104,7 +104,7 @@ ultrasonic_rangefinder/
     ├── system_diagram.png
     └── waveforms.png
 
-image.png
+![image](https://github.com/user-attachments/assets/de944bc5-c3fd-4fc8-9aea-71f22a1ca3ac)
 
 ## Setup and Installation
 
