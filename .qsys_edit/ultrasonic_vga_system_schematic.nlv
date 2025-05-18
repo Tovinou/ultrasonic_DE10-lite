@@ -1,0 +1,31 @@
+# # File gsaved with Nlview version 6.3.8  2013-12-19 bk=1.2992 VDI=34 GEI=35
+# 
+preplace inst ultrasonic_vga_system.nios2_cpu.clock_bridge -pg 1
+preplace inst ultrasonic_vga_system.altpll_0 -pg 1 -lvl 2 -y 40
+preplace inst ultrasonic_vga_system.nios2_cpu.cpu -pg 1
+preplace inst ultrasonic_vga_system.sram -pg 1 -lvl 2 -y 320
+preplace inst ultrasonic_vga_system.jtag -pg 1 -lvl 2 -y 120
+preplace inst ultrasonic_vga_system -pg 1 -lvl 1 -y 40 -regy -20
+preplace inst ultrasonic_vga_system.sdram_controller -pg 1 -lvl 2 -y 220
+preplace inst ultrasonic_vga_system.clk_0 -pg 1 -lvl 1 -y 320
+preplace inst ultrasonic_vga_system.nios2_cpu -pg 1 -lvl 1 -y 130
+preplace inst ultrasonic_vga_system.nios2_cpu.reset_bridge -pg 1
+preplace inst ultrasonic_vga_system.sysid_qsys_0 -pg 1 -lvl 2 -y 420
+preplace inst ultrasonic_vga_system.VGA_IP_0 -pg 1 -lvl 2 -y 500
+preplace netloc EXPORT<net_container>ultrasonic_vga_system</net_container>(MASTER)ultrasonic_vga_system.sdram_clk,(MASTER)altpll_0.c1) 1 2 1 N
+preplace netloc EXPORT<net_container>ultrasonic_vga_system</net_container>(SLAVE)ultrasonic_vga_system.reset,(SLAVE)clk_0.clk_in_reset) 1 0 1 NJ
+preplace netloc EXPORT<net_container>ultrasonic_vga_system</net_container>(SLAVE)VGA_IP_0.conduit_end_4,(SLAVE)ultrasonic_vga_system.vga_r) 1 0 2 NJ 630 NJ
+preplace netloc EXPORT<net_container>ultrasonic_vga_system</net_container>(SLAVE)sdram_controller.wire,(SLAVE)ultrasonic_vga_system.sdram) 1 0 2 NJ 290 NJ
+preplace netloc EXPORT<net_container>ultrasonic_vga_system</net_container>(SLAVE)ultrasonic_vga_system.clk,(SLAVE)clk_0.clk_in) 1 0 1 NJ
+preplace netloc INTERCONNECT<net_container>ultrasonic_vga_system</net_container>(SLAVE)sram.reset1,(MASTER)clk_0.clk_reset,(SLAVE)sdram_controller.reset,(SLAVE)sysid_qsys_0.reset,(SLAVE)nios2_cpu.reset,(SLAVE)VGA_IP_0.reset,(SLAVE)altpll_0.inclk_interface_reset,(MASTER)nios2_cpu.debug_reset_request,(SLAVE)jtag.reset) 1 0 2 100 310 520
+preplace netloc EXPORT<net_container>ultrasonic_vga_system</net_container>(SLAVE)ultrasonic_vga_system.vga_vs,(SLAVE)VGA_IP_0.conduit_end_5) 1 0 2 NJ 650 NJ
+preplace netloc EXPORT<net_container>ultrasonic_vga_system</net_container>(SLAVE)ultrasonic_vga_system.vga_g,(SLAVE)VGA_IP_0.conduit_end_2) 1 0 2 NJ 590 NJ
+preplace netloc POINT_TO_POINT<net_container>ultrasonic_vga_system</net_container>(SLAVE)jtag.irq,(MASTER)nios2_cpu.irq) 1 1 1 540
+preplace netloc EXPORT<net_container>ultrasonic_vga_system</net_container>(SLAVE)ultrasonic_vga_system.vga_hs,(SLAVE)VGA_IP_0.conduit_end_3) 1 0 2 NJ 610 NJ
+preplace netloc POINT_TO_POINT<net_container>ultrasonic_vga_system</net_container>(SLAVE)altpll_0.inclk_interface,(MASTER)clk_0.clk) 1 1 1 460
+preplace netloc INTERCONNECT<net_container>ultrasonic_vga_system</net_container>(SLAVE)VGA_IP_0.avalon_slave_0,(SLAVE)altpll_0.pll_slave,(SLAVE)jtag.avalon_jtag_slave,(SLAVE)sram.s1,(SLAVE)sdram_controller.s1,(MASTER)nios2_cpu.data_master,(SLAVE)nios2_cpu.debug_mem_slave,(MASTER)nios2_cpu.instruction_master,(SLAVE)sysid_qsys_0.control_slave) 1 0 2 100 90 480
+preplace netloc EXPORT<net_container>ultrasonic_vga_system</net_container>(SLAVE)ultrasonic_vga_system.vga_b,(SLAVE)VGA_IP_0.conduit_end_1) 1 0 2 NJ 570 NJ
+preplace netloc POINT_TO_POINT<net_container>ultrasonic_vga_system</net_container>(SLAVE)VGA_IP_0.clock_sink_25,(MASTER)altpll_0.c2) 1 1 2 540 410 780
+preplace netloc FAN_OUT<net_container>ultrasonic_vga_system</net_container>(SLAVE)jtag.clk,(SLAVE)VGA_IP_0.clock,(SLAVE)sram.clk1,(SLAVE)nios2_cpu.clk,(MASTER)altpll_0.c0,(SLAVE)sdram_controller.clk,(SLAVE)sysid_qsys_0.clk) 1 0 3 80 70 500 30 780
+levelinfo -pg 1 0 50 890
+levelinfo -hier ultrasonic_vga_system 60 220 590 800
