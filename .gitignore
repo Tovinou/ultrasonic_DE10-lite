@@ -1,0 +1,25 @@
+@"
+# Quartus build files
+db/
+incremental_db/
+output_files/
+simulation/
+*.bak
+*.rpt
+*.sopcinfo
+*.qws
+*.qdf
+*.sof
+*.jdi
+*.bak
+
+
+# Temporary files
+*.out.*
+*.log
+*.swp
+*.tmp
+
+# System-generated
+*.sdc.bak
+"@ | Set-Content .gitignore
